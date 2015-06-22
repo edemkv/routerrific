@@ -1,0 +1,27 @@
+{
+  "name": "routerrific",
+  "version": "1.0.0",
+  "description": "Convert express routers to markdown",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://edemkv@github.com/edemkv/routerrific.git"
+  },
+  "keywords": [
+    "markdown",
+    "express",
+    "routers"
+  ],
+  "author": "@edemkv",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edemkv/routerrific/issues"
+  },
+  "homepage": "https://github.com/edemkv/routerrific",
+  "devDependencies": {
+    "express": "^4.13.0"
+  }
+}
