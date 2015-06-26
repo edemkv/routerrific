@@ -4,7 +4,7 @@
   "description": "Convert express routers to markdown",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
