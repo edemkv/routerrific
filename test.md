@@ -1,17 +1,18 @@
 #  Routerrific API 
-
-###  Home [GET]
+ 
+###  Home [GET] 
 ------------------------
 Path : {url/}
 
-###  Unknown [DELETE]
+###  Unknown [DELETE] 
 ------------------------
 Path : {url/api}
 
-###  api2 [POST]
+###  api2 [POST] 
 ------------------------
 Path : {url/api2}
 
-###  api3 [PUT]
+###  api3 [PUT] 
 ------------------------
 Path : {url/api3}
+
