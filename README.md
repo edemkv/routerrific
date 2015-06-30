@@ -1,5 +1,5 @@
 # Routerrific
-===============
+---------------
 
 [![Build Status](https://travis-ci.org/edemkv/routerrific.svg)](https://travis-ci.org/edemkv/routerrific)
 
@@ -12,7 +12,7 @@ A minimal node module for express to document all routes.
 ## Installation
 
 ```shell
-  npm install routerrific --save
+  npm install https://github.com/edemkv/routerrific --save
 ```
 
 ## Usage
@@ -39,6 +39,13 @@ A minimal node module for express to document all routes.
    node test.js
 ```
 
+## Bugs/Requests
+
+__Bugs and requests__: submit them through the project's issues tracker.<br>
+[![Issues](http://img.shields.io/github/issues/USER/REPO.svg)]( https://github.com/edemkv/routerrific/issues )
+
 ## Release History
 
 * 1.0.0 Initial release
+
+
