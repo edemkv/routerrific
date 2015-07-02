@@ -9,9 +9,11 @@ var lineBreakEnabled;
 const TITLE_HEADER = '#  %s \r\n ';
 const ROUTE_HEADER = '###  %s [%s] \r\n';
 const HEADER_BREAK = '------------------------\r\n';
-const PATH_URL = 'Path : {url%s}\r\n';
+const PATH_URL = '** Path : ** {url}%s \r\n';
 const LINE_BREAK = '\r\n';
 const ANONYMOUS = '<anonymous>';
+const PATH_VARIABLE_CONSTANT = '** Path Variables ** \r\n';
+const PATH_VARIABLES = '* %s (%s) \r\n';
 
 var init = function(config) {
     filename = config.filename || 'routerrific.md';
@@ -27,6 +29,7 @@ var docmd = function(app) {
     }
 
     var content = app._router.stack;
+
     if (content) {
 
         for (i = 0; i < content.length; i++) {
@@ -36,20 +39,35 @@ var docmd = function(app) {
                 var titleLine = routeName===ANONYMOUS ? 'Unknown' : routeName;
                 var method = Object.keys(content[i].route.methods).map(function(x) { return x.toUpperCase(); });
 
-                var path = content[i].route.path;
+
 
                 writeTofile(util.format(ROUTE_HEADER, titleLine, method));
                 writeTofile(HEADER_BREAK);
-                writeTofile(util.format(PATH_URL, path));
-                if(lineBreakEnabled){writeTofile(LINE_BREAK);}
+
+                writeTofile(util.format(PATH_URL, content[i].route.path), true);
+
+
+                if(content[i].keys){
+                  var keys = content[i].keys;
+                  if(keys.length > 0){ writeTofile(PATH_VARIABLE_CONSTANT, true)};
+                  for (j = 0; j < keys.length; j++) {
+                      var optional = keys[j].optional===true ? 'Optional' : 'Not Optional';
+                      writeTofile(util.format(PATH_VARIABLES, keys[j].name, optional), true);
+                  }
+                }
+
+                  writeTofile(LINE_BREAK);
             }
         }
     }
 }
 
 
-function writeTofile(content) {
+function writeTofile(content, lineBreak) {
     fs.appendFileSync(filename, content);
+    if(lineBreakEnabled && lineBreak) {
+      fs.appendFileSync(filename,LINE_BREAK);
+    }
 }
 
 function clearFile() {

@@ -6,18 +6,17 @@ app.get('/', function Home(req, res) {
   res.send('Hello World!');
 });
 
-app.delete('/api', function(req, res) {
+app.delete('/api/user', function deleteUser(req, res) {
   res.send('Hello World!');
 });
 
-app.post('/api2', function api2(req, res) {
+app.post('/api/user', function createUser(req, res) {
   res.send('Hello World!');
 });
 
-app.put('/api3', function api3(req, res) {
+app.put('/api/customer/:customer/:yes', function updateCustomer(req, res) {
   res.send('Hello World!');
 });
-
 
 routerrific.init({
   filename:"test.md",

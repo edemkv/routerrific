@@ -2,17 +2,27 @@
  
 ###  Home [GET] 
 ------------------------
-Path : {url/}
+** Path : ** {url}/ 
 
-###  Unknown [DELETE] 
-------------------------
-Path : {url/api}
 
-###  api2 [POST] 
+###  deleteUser [DELETE] 
 ------------------------
-Path : {url/api2}
+** Path : ** {url}/api/user 
 
-###  api3 [PUT] 
+
+###  createUser [POST] 
 ------------------------
-Path : {url/api3}
+** Path : ** {url}/api/user 
+
+
+###  updateCustomer [PUT] 
+------------------------
+** Path : ** {url}/api/customer/:customer/:yes 
+
+** Path Variables ** 
+
+* customer (Not Optional) 
+
+* yes (Not Optional) 
+
 

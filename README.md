@@ -18,7 +18,7 @@ A minimal node module for express to document all routes.
 ## Usage
 
 ```js
-  //create a router
+  //create a route
 	app.put('/api/user', function api3(req, res) {
 	  res.send('Hello World!');
 	});
@@ -36,7 +36,7 @@ A minimal node module for express to document all routes.
 ## Tests
 
 ```shell
-   node test.js
+   npm test
 ```
 
 ## Bugs/Requests
@@ -47,5 +47,3 @@ __Bugs and requests__: submit them through the project's issues tracker.<br>
 ## Release History
 
 * 1.0.0 Initial release
-
-
