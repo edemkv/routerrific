@@ -1,25 +1,25 @@
-#  Routerrific API 
+#  `My Api` 
  
-###  Home [GET] 
+###   Home [GET] 
 ------------------------
-** Path : ** {url}/ 
+**Path :** {url}/ 
 
 
-###  deleteUser [DELETE] 
+###  Delete User [DELETE] 
 ------------------------
-** Path : ** {url}/api/user 
+**Path :** {url}/api/user 
 
 
-###  createUser [POST] 
+###  Create User [POST] 
 ------------------------
-** Path : ** {url}/api/user 
+**Path :** {url}/api/user 
 
 
-###  updateCustomer [PUT] 
+###  Update Customer [PUT] 
 ------------------------
-** Path : ** {url}/api/customer/:customer/:yes 
+**Path :** {url}/api/customer/:customer/:yes 
 
-** Path Variables ** 
+**Path Variables** 
 
 * customer (Not Optional) 
 

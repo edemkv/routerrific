@@ -20,7 +20,7 @@ app.put('/api/customer/:customer/:yes', function updateCustomer(req, res) {
 
 routerrific.init({
   filename:"test.md",
-  title:"Routerrific API"
+  title:"My Api"
 });
 
 routerrific.docmd(app);

@@ -6,13 +6,13 @@ var title;
 var lineBreakEnabled;
 
 
-const TITLE_HEADER = '#  %s \r\n ';
+const TITLE_HEADER = '#  `%s` \r\n ';
 const ROUTE_HEADER = '###  %s [%s] \r\n';
 const HEADER_BREAK = '------------------------\r\n';
-const PATH_URL = '** Path : ** {url}%s \r\n';
+const PATH_URL = '**Path :** {url}%s \r\n';
 const LINE_BREAK = '\r\n';
 const ANONYMOUS = '<anonymous>';
-const PATH_VARIABLE_CONSTANT = '** Path Variables ** \r\n';
+const PATH_VARIABLE_CONSTANT = '**Path Variables** \r\n';
 const PATH_VARIABLES = '* %s (%s) \r\n';
 
 var init = function(config) {
@@ -37,15 +37,15 @@ var docmd = function(app) {
                 var routeName = content[i].route.stack[0].name;
 
                 var titleLine = routeName===ANONYMOUS ? 'Unknown' : routeName;
+                // insert a space before all caps  // uppercase the first character
+                titleLine = titleLine.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })
+
                 var method = Object.keys(content[i].route.methods).map(function(x) { return x.toUpperCase(); });
-
-
 
                 writeTofile(util.format(ROUTE_HEADER, titleLine, method));
                 writeTofile(HEADER_BREAK);
 
                 writeTofile(util.format(PATH_URL, content[i].route.path), true);
-
 
                 if(content[i].keys){
                   var keys = content[i].keys;
@@ -77,5 +77,4 @@ function clearFile() {
 module.exports = {
     init: init,
     docmd: docmd
-    // table: tablemd
 };
