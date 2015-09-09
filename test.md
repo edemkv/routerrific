@@ -1,28 +1,26 @@
-#  `My Api` 
- 
-###   Home [GET] 
+#  `My Api`
+
+###   Home [GET]
 ------------------------
-**Path :** {url}/ 
+**Path :** {url}/
 
 
-###  Delete User [DELETE] 
+###  Delete User [DELETE]
 ------------------------
-**Path :** {url}/api/user 
+**Path :** {url}/api/user
 
 
-###  Create User [POST] 
+###  Create User [POST]
 ------------------------
-**Path :** {url}/api/user 
+**Path :** {url}/api/user
 
 
-###  Update Customer [PUT] 
+###  Update Customer [PUT]
 ------------------------
-**Path :** {url}/api/customer/:customer/:yes 
+**Path :** {url}/api/customer/:customer/:yes
 
-**Path Variables** 
+**Path Variables**
 
-* customer (Not Optional) 
+* customer (Not Optional)
 
 * yes (Not Optional) 
-
-
