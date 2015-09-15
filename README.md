@@ -16,10 +16,13 @@ A minimal node module for express to document all routes.
 
 ## Usage
 
+
+### Document Mode
+
 ```js
   //create a route
-	app.put('/api/user', function api3(req, res) {
-	  res.send('Hello World!');
+	app.put('/api/user', function updateUser(req, res) {
+	  ........
 	});
 
   //set configuration
@@ -31,6 +34,25 @@ A minimal node module for express to document all routes.
   //pass your defined app
 	routerrific.docmd(app);
 ```
+
+### List Mode
+
+```js
+  //create a route
+	app.get('/api/', function getUser(req, res) {
+	  ..........
+	});
+
+  //set configuration
+	routerrific.init({
+	  filename:"test.md",
+	  title:"Routerrific API"
+	});
+
+  //pass your defined app
+	routerrific.listmd(app);
+```
+
 
 ## Tests
 

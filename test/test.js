@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var routerrific = require('./index.js');
+var routerrific = require('../index.js');
 
 app.get('/', function Home(req, res) {
   res.send('Hello World!');
@@ -19,11 +19,16 @@ app.put('/api/customer/:customer/:yes', function updateCustomer(req, res) {
 });
 
 routerrific.init({
-  filename:"test.md",
-  title:"My Api"
+  filename:"test/test.md",
+  title:"Test Api"
 });
 
 routerrific.docmd(app);
 
+routerrific.init({
+  filename:"test/test2.md",
+  title:"Test Api 2"
+});
+routerrific.listmd(app);
 
 //https://github.com/sindresorhus/urls-md

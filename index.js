@@ -5,15 +5,20 @@ var filename;
 var title;
 var lineBreakEnabled;
 
-
+//GLOBAL HEADER
 const TITLE_HEADER = '#  `%s` \r\n ';
 const ROUTE_HEADER = '###  %s [%s] \r\n';
 const HEADER_BREAK = '------------------------\r\n';
+
+//DOCMD CONSTANTS
 const PATH_URL = '**Path :** {url}%s \r\n';
 const LINE_BREAK = '\r\n';
 const ANONYMOUS = '<anonymous>';
 const PATH_VARIABLE_CONSTANT = '**Path Variables** \r\n';
 const PATH_VARIABLES = '* %s (%s) \r\n';
+
+//LIST CONSTANTS
+const LIST_FORMAT = '* %s  `%s` %s\r\n ';
 
 var init = function(config) {
     filename = config.filename || 'routerrific.md';
@@ -63,6 +68,34 @@ var docmd = function(app) {
 }
 
 
+var listmd = function(app) {
+    clearFile();
+    if(title){
+      writeTofile(util.format(TITLE_HEADER, title));
+      writeTofile(LINE_BREAK);
+    }
+
+    var content = app._router.stack;
+
+    if (content) {
+      for (i = 0; i < content.length; i++) {
+          if (content[i].route) {
+              var routeName = content[i].route.stack[0].name;
+
+              var titleLine = routeName===ANONYMOUS ? 'Unknown' : routeName;
+              // insert a space before all caps  // uppercase the first character
+              titleLine = titleLine.replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); })
+
+              var method = Object.keys(content[i].route.methods).map(function(x) { return x.toUpperCase(); });
+
+              writeTofile(util.format(LIST_FORMAT, method, content[i].route.path, titleLine), true);
+            }
+          }
+
+    }
+}
+
+
 function writeTofile(content, lineBreak) {
     fs.appendFileSync(filename, content);
     if(lineBreakEnabled && lineBreak) {
@@ -76,5 +109,6 @@ function clearFile() {
 
 module.exports = {
     init: init,
-    docmd: docmd
+    docmd: docmd,
+    listmd:listmd
 };
