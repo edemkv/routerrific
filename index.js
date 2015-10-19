@@ -96,6 +96,20 @@ var listmd = function(app) {
 }
 
 
+ function replaceInfile(filename){
+    fs.readFile(filename, 'utf8', function (err,data) {
+      if (err) {
+        return console.log(err);
+      }
+      var result = data.replace('', 'replacement');
+
+      fs.writeFile(filename, result, 'utf8', function (err) {
+         if (err) return console.log(err);
+      });
+    });
+}
+
+
 function writeTofile(content, lineBreak) {
     fs.appendFileSync(filename, content);
     if(lineBreakEnabled && lineBreak) {
