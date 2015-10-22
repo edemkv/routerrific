@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 var routerrific = require('../index.js');
+var dependecies = require('../lib/package.js').devDependencies;
+
+console.log(dependecies);
 
 app.get('/', function Home(req, res) {
   res.send('Hello World!');
