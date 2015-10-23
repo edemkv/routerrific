@@ -1,8 +1,12 @@
 # Routerrific
 
+> A full-featured markdown creater for node applications written with express.
+
 [![Build Status](https://travis-ci.org/edemkv/routerrific.svg)](https://travis-ci.org/edemkv/routerrific)
 
-[![Dependecies](https://david-dm.org/edemkv/routerrific.svg)](https://david-dm.org/edemkv/routerrific)
+[![Dependency Status](https://david-dm.org/edemkv/routerrific.svg)](https://david-dm.org/edemkv/routerrific)
+
+[![devDependency Status](https://david-dm.org/edemkv/routerrific/dev-status.svg)](https://david-dm.org/edemkv/routerrific#info=devDependencies)
 
 
 A minimal node module for express to document all routes.
